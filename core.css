@@ -1,0 +1,109 @@
+*{ font-family: Arial, Helvetica, sans-serif; text-decoration: none; scroll-behavior: smooth; }
+body { margin: 0px; background-color: rgb(25,25,25); color: white; }
+
+h1, h2, h3, h4 { font-weight: lighter;}
+
+a { text-decoration: none; color: white; padding: 10px;}
+
+nav 
+{
+    height: 75px;
+    display: flex;
+    width: 100%;
+}
+
+.nav-item
+{
+    height: 75px;
+    padding: 0px 10px;
+    display: inline-flex;
+}
+
+.nav-item:hover
+{
+    background-color: #e84740;
+}
+
+.icon
+{
+    height: 30px;
+    width: 30px;
+    margin: auto;
+}
+
+.nav-link
+{
+    margin: auto;
+}
+
+#top
+{
+    /*background-color: crimson;*/
+    height: 100vh;
+    text-align: center;
+}
+
+#banner
+{
+    background-color: rgb(15,15,15);
+    padding: 20px;
+    text-align: center;
+}
+
+.about
+{
+    text-align: center;
+    display: block;
+}
+
+.section
+{
+    padding-top: 100px;
+    height: calc(100vh - 100px);
+    text-align: center;
+    display: block;
+}
+
+.logo 
+{
+    width: 300px;
+    margin: auto;
+}
+
+.w-profile
+{
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    width: 300px;
+}
+
+.img-profile
+{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+
+.documents
+{
+    padding-top: 50px;
+}
+
+.document-w
+{
+    display: inline-flex;
+    background-color: #e84740;
+    margin: 10px;
+}
+.document-item
+{
+    display: inline-flex;
+    margin: auto;
+    height: 50px;
+}
+.document-item-text
+{
+    padding: 0px 10px
+}
