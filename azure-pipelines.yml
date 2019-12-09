@@ -22,7 +22,7 @@ steps:
     script: |
       echo 'This is a bash test'
       echo 'Connecting to SSHkey for OsloMet'
-      ssh -i s326311SSH s326311@studssh.cs.hioa.no
+      ssh -i SSHkey s326311@studssh.cs.hioa.no
       echo $PWD
 
 - task: ArchiveFiles@2
