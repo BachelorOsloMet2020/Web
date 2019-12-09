@@ -25,8 +25,6 @@ steps:
       ssh -i s326311SSH s326311@studssh.cs.hioa.no
       echo $PWD
 
-
-steps:
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(build.sourcesDirectory)'
