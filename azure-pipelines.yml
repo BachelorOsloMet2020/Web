@@ -11,8 +11,8 @@ pool:
 
 steps:
 - task: DownloadSecureFile@1
-  name: SSHkey
-  displayName: 'Downloading SSHkey for SFTP access'
+  name: SSHKey
+  displayName: 'Downloading SSHKey for SFTP access'
   inputs:
     secureFile: 's326311SSH.txt'
 
@@ -21,8 +21,10 @@ steps:
     targetType: 'inline'
     script: |
       echo 'This is a bash test'
+      echo 'Outputting ssh key'
+      cat $(SSHKey.secureFilePath)
       echo 'Connecting to SSHkey for OsloMet'
-      ssh -i SSHkey s326311@studssh.cs.hioa.no
+      ssh -i $(SSHKey.secureFilePath) s326311@studssh.cs.hioa.no
       echo $PWD
 
 - task: ArchiveFiles@2
