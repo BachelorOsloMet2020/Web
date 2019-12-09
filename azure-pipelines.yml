@@ -10,22 +10,31 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: DownloadSecureFile@1
-  name: SSHKey
-  displayName: 'Downloading SSHKey for SFTP access'
-  inputs:
-    secureFile: 's326311SSH.txt'
 
-- task: Bash@3
+#- task: DownloadSecureFile@1
+#  name: SSHKey
+#  displayName: 'Downloading SSHKey for SFTP access'
+#  inputs:
+#    secureFile: 's326311SSH.txt'
+
+- task: SSH@0
   inputs:
-    targetType: 'inline'
-    script: |
-      echo 'This is a bash test'
-      echo 'Outputting ssh key'
-      cat $(SSHKey.secureFilePath)
-      echo 'Connecting to SSHkey for OsloMet'
-      ssh -i $(SSHKey.secureFilePath) s326311@studssh.cs.hioa.no
+    sshEndpoint: 'StudSSHConnection'
+    runOptions: 'inline'
+    inline: |
+      echo This is a test
       echo $PWD
+
+#- task: Bash@3
+#  inputs:
+#    targetType: 'inline'
+#    script: |
+#      echo 'This is a bash test'
+#      echo 'Outputting ssh key'
+#      cat $(SSHKey.secureFilePath)
+#      echo 'Connecting to SSHkey for OsloMet'
+#      ssh -i $(SSHKey.secureFilePath) s326311@studssh.cs.hioa.no
+#      echo $PWD
 
 - task: ArchiveFiles@2
   inputs:
